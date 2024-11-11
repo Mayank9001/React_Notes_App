@@ -51,13 +51,6 @@ const Notes = (props) => {
     setGroups(newGroup);
     setNotes("");
   };
-
-  const keypress = (e) => {
-    if (e.code === "Enter") {
-      handleSubmit();
-      setNotes("");
-    }
-  };
   const grpInitials = (groupName) => {
     const words = groupName.split(" ");
     if (words.length === 1) {
@@ -73,7 +66,54 @@ const Notes = (props) => {
   return (
     <>
       {screenSize.width < 768 ? (
-        <></>
+        <>
+          <div className={styles.notesContainer}>
+            <div className={styles.notesHeader}>
+              <img
+                src={backIcon}
+                alt="back"
+                onClick={() => {
+                  window.location.reload();
+                }}
+              />
+              <div
+                className={styles.notesGroup}
+                style={{ background: groupSelect.color }}
+              >
+                {groupSelect.groupName
+                  ? grpInitials(groupSelect.groupName)
+                  : ""}
+              </div>
+              <h2 className={styles.groupName}>{groupSelect.groupName}</h2>
+            </div>
+            <div className={styles.NotesAndDateMobile}>
+              {notes.map((note) => (
+                <div className={styles.DateAndText}>
+                  <div className={styles.DateAndTime}>
+                    <p className={styles.TimeMobile}>{note.time}</p>
+                    <p className={styles.DateMobile}>{note.date}</p>
+                  </div>
+                  <p className={styles.TextMobile}>{note.note}</p>
+                </div>
+              ))}
+            </div>
+            <div className={styles.TextareaMobile}>
+              <textarea
+                className={styles.TextInputMobile}
+                type="text"
+                value={note}
+                onChange={handleChange}
+                placeholder="Enter your text here..."
+              ></textarea>
+              <img
+                src={sendIcon}
+                className={styles.SendImgMobile}
+                alt="SendImg"
+                onClick={handleSubmit}
+              />
+            </div>
+          </div>
+        </>
       ) : (
         <>
           <div className={styles.notesContent}>

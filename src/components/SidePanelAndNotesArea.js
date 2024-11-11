@@ -6,8 +6,8 @@ import Lock from "../assets/Lock.png";
 import Notes from "./Notes";
 
 const SidePanelAndNotesArea = () => {
-  const [openModal, setOpenModal] = useState([false]);
-  const [groupSelect, setGroupSelect] = useState([null]);
+  const [openModal, setOpenModal] = useState(false);
+  const [groupSelect, setGroupSelect] = useState(null);
   const [groups, setGroups] = useState([]);
 
   const getScreen = () => {
@@ -52,8 +52,57 @@ const SidePanelAndNotesArea = () => {
 
   return (
     <>
-      {screenSize.width < 989 ? (
-        <></>
+      {screenSize.width < 768 ? (
+        <>
+          <div className="sidebarContainerMobile">
+            {groupSelect ? (
+              <Notes
+                groupSelect={groupSelect}
+                groups={groups}
+                setGroups={setGroups}
+              />
+            ) : (
+              <>
+                <h1 className="headingMobile">Pocket Notes</h1>
+                <button
+                  className="CreateButtonMobile"
+                  onClick={() => setOpenModal(true)}
+                >
+                  + Create Notes group
+                </button>
+                <div className="GroupList">
+                  {groups.map((group) => (
+                    <div
+                      key={group.id}
+                      className={`groupItem ${
+                        groupSelect === group ? "selected" : ""
+                      }`}
+                      onClick={() => handleClick(group)}
+                    >
+                      <div
+                        className="groupIcon"
+                        style={{ background: group.color }}
+                      >
+                        {groupSelect.groupName
+                          ? grpInitials(groupSelect.groupName)
+                          : ""}
+                      </div>
+                      <h2 className="groupName">{group.groupName}</h2>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {openModal && (
+              <Modal
+                closeModal={setOpenModal}
+                setGroups={setGroups}
+                groups={groups}
+              />
+            )}
+          </div>
+        </>
       ) : (
         <>
           <div className="side-panel-container">
