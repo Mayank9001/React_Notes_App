@@ -73,8 +73,8 @@ const Notes = (props) => {
     <>
       {screenSize.width < 768 ? (
         <>
-          <div className={styles.notesContainer}>
-            <div className={styles.notesHeader}>
+          <div className="">
+            <div className="">
               <img
                 src={backIcon}
                 alt="back"
@@ -82,30 +82,27 @@ const Notes = (props) => {
                   window.location.reload();
                 }}
               />
-              <div
-                className={styles.notesGroup}
-                style={{ background: groupSelect.color }}
-              >
+              <div className="" style={{ background: groupSelect.color }}>
                 {groupSelect.groupName
                   ? grpInitials(groupSelect.groupName)
                   : ""}
               </div>
-              <h2 className={styles.groupName}>{groupSelect.groupName}</h2>
+              <h2 className="">{groupSelect.groupName}</h2>
             </div>
-            <div className={styles.NotesAndDateMobile}>
+            <div className="">
               {notes.map((note) => (
-                <div className={styles.DateAndText}>
-                  <div className={styles.DateAndTime}>
-                    <p className={styles.TimeMobile}>{note.time}</p>
-                    <p className={styles.DateMobile}>{note.date}</p>
+                <div className="">
+                  <div className="">
+                    <p className=""></p>
+                    <p className=""></p>
                   </div>
-                  <p className={styles.TextMobile}>{note.note}</p>
+                  <p className="">{note.note}</p>
                 </div>
               ))}
             </div>
-            <div className={styles.TextareaMobile}>
+            <div className="">
               <textarea
-                className={styles.TextInputMobile}
+                className=""
                 type="text"
                 value={note}
                 onChange={handleChange}
@@ -113,7 +110,7 @@ const Notes = (props) => {
               ></textarea>
               <img
                 src={sendIcon}
-                className={styles.SendImgMobile}
+                className=""
                 alt="SendImg"
                 onClick={handleSubmit}
               />

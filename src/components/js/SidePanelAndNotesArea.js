@@ -54,7 +54,7 @@ const SidePanelAndNotesArea = () => {
     <>
       {screenSize.width < 768 ? (
         <>
-          <div className="sidebarContainerMobile">
+          <div className="">
             {groupSelect ? (
               <Notes
                 groupSelect={groupSelect}
@@ -63,14 +63,11 @@ const SidePanelAndNotesArea = () => {
               />
             ) : (
               <>
-                <h1 className="headingMobile">Pocket Notes</h1>
-                <button
-                  className="CreateButtonMobile"
-                  onClick={() => setOpenModal(true)}
-                >
+                <h1 className="">Pocket Notes</h1>
+                <button className="" onClick={() => setOpenModal(true)}>
                   + Create Notes group
                 </button>
-                <div className="GroupList">
+                <div className="">
                   {groups.map((group) => (
                     <div
                       key={group.id}
@@ -79,15 +76,10 @@ const SidePanelAndNotesArea = () => {
                       }`}
                       onClick={() => handleClick(group)}
                     >
-                      <div
-                        className="groupIcon"
-                        style={{ background: group.color }}
-                      >
-                        {groupSelect.groupName
-                          ? grpInitials(groupSelect.groupName)
-                          : ""}
+                      <div className="" style={{ background: group.color }}>
+                        {group.groupName ? grpInitials(group.groupName) : ""}
                       </div>
-                      <h2 className="groupName">{group.groupName}</h2>
+                      <h2 className="">{group.groupName}</h2>
                     </div>
                   ))}
                 </div>

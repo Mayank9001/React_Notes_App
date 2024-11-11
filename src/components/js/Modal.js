@@ -66,30 +66,30 @@ const Modal = (props) => {
     <>
       {screenSize.width < 768 ? (
         <>
-          <div className={styles.modalBackgroundMobile}>
-            <div className={styles.modalContainerMobile}>
+          <div className="">
+            <div className="">
               <span>
                 <button
-                  className={styles.closeButtonMobile}
+                  className=""
                   onClick={() => props.closeModal(false)}
                 >
                   X
                 </button>
               </span>
-              <h2 className={styles.modalHeading}>Create New Group</h2>
-              <label className={styles.modalGrp}>Group Name</label>
+              <h2 className="">Create New Group</h2>
+              <label className="">Group Name</label>
               <input
                 type="text"
-                className={styles.modalTextMobile}
+                className=""
                 name="grpName"
                 placeholder="Enter your group name"
                 onChange={handleChange}
               />
               <br />
-              <label className={styles.modalColor}>Choose Colour</label>
+              <label className="">Choose Colour</label>
               {color.map((color, index) => (
                 <button
-                  className={`${styles.colorButton} ${
+                  className={`${
                     formData.color === color ? "selected" : ""
                   }`}
                   name="color"
@@ -108,7 +108,7 @@ const Modal = (props) => {
                 ></button>
               ))}
               <button
-                className={styles.modalCreateMobile}
+                className=""
                 onClick={handleSubmit}
               >
                 Create
