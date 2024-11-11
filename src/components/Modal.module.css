@@ -1,0 +1,111 @@
+.modal{
+    width: 100vw;
+    height: 100vh;
+    background: hsla(0, 0%, 18%, 0.75);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.innerModal{
+    width: 40%;
+    height: 25%;
+    border-radius: 6px;
+    background: white;
+    padding: 35px;
+}
+.closebutton{
+    background: transparent;
+    border: none;
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+.createGrp{
+    font-family: 'Roboto';
+    font-size: 29px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 46px;
+    letter-spacing: 0.035em;
+    padding-top: 0;
+    margin-top: 0;
+}
+.grpName{
+    font-family: 'Roboto';
+    font-size: 27px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 44px;
+    letter-spacing: 0.035em;
+    text-align: left;
+    padding-right: 30px;
+    margin: 10px 0 0px 0;
+    position: relative;
+    top: 10px;
+}
+.enterText{
+    width: 60%;
+    height: 35px;
+    border-radius: 22px;
+    border: 2px solid #CCCCCC;
+    color: #000;
+    padding: 0 20px 0 20px;
+    position: relative;
+    top: 7px;
+}
+.enterText::placeholder{
+    color: #979797;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 37px;
+    letter-spacing: 0.035em;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.chooseColor{
+    font-family: 'Roboto';
+    font-size: 27px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 44px;
+    letter-spacing: 0.035em;
+    text-align: left;
+    padding-right: 30px;
+    margin-top: 30px;
+    padding-right: 50px;
+    position: relative;
+    top: 20px;
+}
+.colorBtnStyles{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: none;
+    margin-right: 15px;
+    position: relative;
+    top: 25px;
+    cursor: pointer;
+}
+.selected{
+    border: 1px solid gray;
+}
+.createBtn{
+    width: 154px;
+    height: 38px;
+    background-color: #001F8b;
+    color: white;
+    border-radius: 11px;
+    position: relative;
+    top: 25px;
+    left: 465px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    line-height: 32px;
+    letter-spacing: 0.035em;
+}

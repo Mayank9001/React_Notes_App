@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.side-panel-container{
+    width: 40%;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+.title{
+    color: black;
+    font-family: 'Roboto';
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 41px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding-top: 40px;
+}
+.create-button{
+    width: 93px;
+    height: 93px;
+    top: 846px;
+    cursor: pointer;
+    left: 312px;
+    background-color: #16008B;
+    border-radius: 50%;
+    font-family: 'Roboto';
+    font-size: 70px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-style: bold;
+    line-height: 68.38px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    border: none;
+    position: sticky;
+    top: 85vh;
+    left: 20vw;
+    z-index: 1000;
+}
+.groupList{
+    overflow-y: auto;
+    height: 83vh;
+    position: relative;
+    top: -50px;
+}
+.groupItem{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.groupItem.selected{
+    border-radius: 16px;
+    background-color: rgba(47, 47, 47, 0.17);
+}
+
+.groupItem:hover{
+    background-color: rgba(47, 47, 47, 0.20);
+}
+.groupName{
+    font-family: 'Roboto';
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    font-size: 24px;
+    line-height: 28px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.groupInitials{
+    margin-left: 40px;
+    width: 60px;
+    height: 60px;
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.Notes-Area-Container{
+    background-color: rgb(178, 202, 238);
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+.NotesAreaText{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.NotesAreaTitle{
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: 0.02em;
+    color: black;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+.NotesAreaMessage{
+    color: #292929;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+.NotesAreaEncryption{
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+    color: #292929;
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    right: 33%;
+}
+.lockImg{
+    width: 17px;
+    height: 21px;
+    position: relative;
+    top: 5px;
+    padding-right: 4px;
+}
