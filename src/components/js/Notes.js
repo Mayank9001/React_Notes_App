@@ -32,8 +32,7 @@ const Notes = (props) => {
   };
 
   const handleSubmit = () => {
-    if(note.trim() === "")
-    {
+    if (note.trim() === "") {
       alert("Please enter a note");
       return;
     }
@@ -51,6 +50,7 @@ const Notes = (props) => {
     })}`;
     console.log(props);
     console.log(newGroup);
+    console.log(groupId);
     console.log(note.length);
     groupId["notes"].push({ date, time, note });
     localStorage.setItem("groups", JSON.stringify(newGroup));
@@ -138,15 +138,15 @@ const Notes = (props) => {
             </div>
             <div className={styles.notesList}>
               {notes.map((note) => (
-                  <div className={styles.noteAndTimeStamp}>
-                    <p className={styles.note}>{note.note}</p>
-                    <div className={styles.timeStamp}>
-                      <p className={styles.Date}>{note.date}</p>
-                      <img src={dot} className={styles.dotImg}></img>
-                      <p className={styles.Time}>{note.time}</p>
-                    </div>
+                <div className={styles.noteAndTimeStamp}>
+                  <p className={styles.note}>{note.note}</p>
+                  <div className={styles.timeStamp}>
+                    <p className={styles.Date}>{note.date}</p>
+                    <img src={dot} alt="" className={styles.dotImg}></img>
+                    <p className={styles.Time}>{note.time}</p>
                   </div>
-                ))}
+                </div>
+              ))}
             </div>
             <div className={styles.notesInputArea}>
               <textarea

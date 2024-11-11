@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "../css/Modal.module.css";
+let tempId = 0;
 
 const Modal = (props) => {
   const [formData, setFormData] = useState({ grpName: " ", color: " " });
@@ -13,7 +14,6 @@ const Modal = (props) => {
     "#FF79F2",
     "#B38BFA",
   ];
-
   const getScreen = () => {
     return {
       width: window.innerWidth,
@@ -30,12 +30,7 @@ const Modal = (props) => {
   }, []);
 
   const handleChange = (e) => {
-    console.log(e.target.value.trim());
     e.preventDefault();
-    if (e.target.value.trim() === "") {
-      alert("Please enter a group name");
-      return;
-    }
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -58,9 +53,10 @@ const Modal = (props) => {
         groupName: formData.grpName,
         color: formData.color,
         notes: [],
-        id: groups.length + 1,
+        id: tempId++,
       },
     ];
+    console.log(newGrp);
     setGroups(newGrp);
     localStorage.setItem("groups", JSON.stringify(newGrp));
     props.closeModal(false);
