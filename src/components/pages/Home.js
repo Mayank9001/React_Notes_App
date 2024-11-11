@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SidePanelAndNotesArea from "../SidePanelAndNotesArea";
+import SidePanelAndNotesArea from "../js/SidePanelAndNotesArea";
 
 const Home = () => {
   return (

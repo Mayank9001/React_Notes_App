@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import backIcon from "../assets/backIcon.png";
 import sendIcon from "../assets/SendIcon.png";
-import styles from "./Notes.module.css";
+import styles from "../css/Notes.module.css";
 import dot from "../assets/Dot.png";
 
 const Notes = (props) => {

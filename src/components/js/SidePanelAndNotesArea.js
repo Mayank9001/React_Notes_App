@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "./SidePanelAndNotesArea.css";
-import Modal from "./Modal";
+import "../css/SidePanelAndNotesArea.css";
+import Modal from "../js/Modal";
 import Feature from "../assets/Feature.png";
 import Lock from "../assets/Lock.png";
-import Notes from "./Notes";
+import Notes from "../js/Notes";
 
 const SidePanelAndNotesArea = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -135,7 +135,7 @@ const SidePanelAndNotesArea = () => {
                   >
                     {group.groupName ? grpInitials(group.groupName) : ""}
                   </div>
-                  <h3 className="groupName">{group.groupName}</h3>
+                  <h2 className="groupName">{group.groupName}</h2>
                 </div>
               ))}
             </div>

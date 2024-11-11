@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./Modal.module.css";
+import styles from "../css/Modal.module.css";
 
 const Modal = (props) => {
   const [formData, setFormData] = useState({ grpName: " ", color: " " });
@@ -30,8 +30,12 @@ const Modal = (props) => {
   }, []);
 
   const handleChange = (e) => {
+    console.log(e.target.value.trim());
     e.preventDefault();
-    
+    if (e.target.value.trim() === "") {
+      alert("Please enter a group name");
+      return;
+    }
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -44,10 +48,6 @@ const Modal = (props) => {
   };
 
   const handleSubmit = (e) => {
-    if (e.target.value.trim() === "") {
-      alert("Please enter group name");
-      return;
-    }
     if (formData.color === "") {
       alert("Please select a color");
       return;
