@@ -49,9 +49,9 @@ const Notes = (props) => {
       year: "numeric",
     })}`;
     console.log(props);
+    console.log(groupSelect);
     console.log(newGroup);
     console.log(groupId);
-    console.log(note.length);
     groupId["notes"].push({ date, time, note });
     localStorage.setItem("groups", JSON.stringify(newGroup));
     setGroups(newGroup);

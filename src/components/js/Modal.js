@@ -69,10 +69,7 @@ const Modal = (props) => {
           <div className="">
             <div className="">
               <span>
-                <button
-                  className=""
-                  onClick={() => props.closeModal(false)}
-                >
+                <button className="" onClick={() => props.closeModal(false)}>
                   X
                 </button>
               </span>
@@ -89,9 +86,7 @@ const Modal = (props) => {
               <label className="">Choose Colour</label>
               {color.map((color, index) => (
                 <button
-                  className={`${
-                    formData.color === color ? "selected" : ""
-                  }`}
+                  className={`${formData.color === color ? "selected" : ""}`}
                   name="color"
                   color={color}
                   key={index}
@@ -107,10 +102,7 @@ const Modal = (props) => {
                   onClick={handleColorChange}
                 ></button>
               ))}
-              <button
-                className=""
-                onClick={handleSubmit}
-              >
+              <button className="" onClick={handleSubmit}>
                 Create
               </button>
             </div>
