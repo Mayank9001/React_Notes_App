@@ -14,13 +14,6 @@
     background: white;
     padding: 35px;
 }
-.closebutton{
-    background: transparent;
-    border: none;
-    float: right;
-    font-size: 25px;
-    cursor: pointer;
-}
 .createGrp{
     font-family: 'Roboto';
     font-size: 29px;

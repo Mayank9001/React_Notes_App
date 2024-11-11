@@ -32,6 +32,11 @@ const Notes = (props) => {
   };
 
   const handleSubmit = () => {
+    if(note.trim() === "")
+    {
+      alert("Please enter a note");
+      return;
+    }
     let newGroup = [...groups];
     let groupId = newGroup[groupSelect.id];
     let time = `${new Date().toLocaleTimeString("en-us", {
@@ -46,6 +51,7 @@ const Notes = (props) => {
     })}`;
     console.log(props);
     console.log(newGroup);
+    console.log(note.length);
     groupId["notes"].push({ date, time, note });
     localStorage.setItem("groups", JSON.stringify(newGroup));
     setGroups(newGroup);
@@ -131,8 +137,7 @@ const Notes = (props) => {
               <h2 className={styles.noteName}>{groupSelect.groupName}</h2>
             </div>
             <div className={styles.notesList}>
-              {notes &&
-                notes.map((note) => (
+              {notes.map((note) => (
                   <div className={styles.noteAndTimeStamp}>
                     <p className={styles.note}>{note.note}</p>
                     <div className={styles.timeStamp}>

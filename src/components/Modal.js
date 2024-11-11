@@ -31,6 +31,7 @@ const Modal = (props) => {
 
   const handleChange = (e) => {
     e.preventDefault();
+    
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -43,6 +44,10 @@ const Modal = (props) => {
   };
 
   const handleSubmit = (e) => {
+    if (e.target.value.trim() === "") {
+      alert("Please enter group name");
+      return;
+    }
     if (formData.color === "") {
       alert("Please select a color");
       return;
@@ -118,14 +123,6 @@ const Modal = (props) => {
       ) : (
         <div className={styles.modal}>
           <div className={styles.innerModal}>
-            <span>
-              <button
-                className={styles.closebutton}
-                onClick={() => props.closeModal(false)}
-              >
-                X
-              </button>
-            </span>
             <h2 className={styles.createGrp}>Create New Group</h2>
             <label className={styles.grpName}>Group Name</label>
             <input
